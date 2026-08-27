@@ -1,1 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "cctv-cam",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-28",
 
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CCTV_ROOM",
+        "class_name": "CctvRoom"
+      }
+    ]
+  },
+
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["CctvRoom"]
+    }
+  ]
+}
